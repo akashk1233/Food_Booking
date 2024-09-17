@@ -16,10 +16,13 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long cartId;
+
     @OneToOne
     private Users customer;
+
     private Long total;
-    @OneToMany(mappedBy = "cart",cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<CartItems> cartItems;
 }

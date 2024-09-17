@@ -16,4 +16,6 @@ public class IngredientsItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long ingredientId;
+
+    private String name;
 }

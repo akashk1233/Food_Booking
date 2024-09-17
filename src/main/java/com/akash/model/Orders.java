@@ -18,22 +18,26 @@ public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long order_id;
+
     @ManyToOne
-    @JoinColumn(name = "cutomer_id",nullable = false)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Users customer;
+
     @JsonIgnore
     @ManyToOne
     private Restorent restorent;
+
     private Long totalAmount;
     private String orderStatus;
     private Date createdDate;
+
     @ManyToOne
     private Address address;
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "order_id")
     private List<OrderItems> orderItems;
-//    private Payment payment;
+
     private int totalItems;
-    private int totalAmmount;
-
-
+//    private int totalAmount;
 }

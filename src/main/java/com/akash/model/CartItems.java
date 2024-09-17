@@ -16,12 +16,18 @@ public class CartItems {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long cartItemsId;
+
     @ManyToOne
     @JsonIgnore
     private Cart cart;
+
     @ManyToOne
     private Food food;
+
     private int quantity;
+
+    @ElementCollection
     private List<String> ingredients;
+
     private int totalPrice;
 }

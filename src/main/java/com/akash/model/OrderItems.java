@@ -15,9 +15,14 @@ public class OrderItems {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderItemId;
+
     @ManyToOne
     private Food food;
+
     private int quantity;
+
     private Long price;
+
+    @ElementCollection
     private List<String> ingredients;
 }

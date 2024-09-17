@@ -1,2 +1,10 @@
-package com.akash.repository;public interface CartRepository {
+package com.akash.repository;
+
+import com.akash.model.Cart;
+import org.hibernate.sql.exec.spi.JdbcCallParameterExtractor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CartRepository extends JpaRepository<Cart, Long> {
 }

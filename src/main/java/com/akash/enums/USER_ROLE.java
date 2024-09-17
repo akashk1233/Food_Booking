@@ -1,5 +1,5 @@
 package com.akash.enums;
 
 public enum USER_ROLE {
-    ROLE_USER,RESTORENT_OWNER,ADMIN
+    ROLE_CUSTOMER,RESTORENT_OWNER,ADMIN
 }
